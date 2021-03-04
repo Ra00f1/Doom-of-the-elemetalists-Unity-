@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Defenders
+  - Attackers
+  - Dead Enemy
+  - ArcherTower
+  - BomberTower
+  - CrystalTower
+  - DefenderTower
+  - BuildablePlaces
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - UI Background
+  - AttackerLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI Background
+    uniqueID: 3641487047
+    locked: 0
+  - name: UI
+    uniqueID: 2130879787
+    locked: 0
