@@ -30,6 +30,10 @@ public class TowerSc : MonoBehaviour
 
     public GameObject ArrowPrefab;
     public GameObject RotatablePart;
+    public GameObject TowerRangeGO;
+
+    private SpriteRenderer TowerRangeSpriteRenderer;
+
     public string enemyTag = "Attackers";
 
     private float dir2;
@@ -39,6 +43,7 @@ public class TowerSc : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.3f);
+        TowerRangeSpriteRenderer = TowerRangeGO.GetComponent<SpriteRenderer>();
     }
 
     private void UpdateTarget()

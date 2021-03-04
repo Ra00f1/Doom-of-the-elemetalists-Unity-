@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -13,8 +13,10 @@ public class Enemy : MonoBehaviour
     public float Health = 50f;
     public float PhysicalDefense;
     public float MagicalDefense;
+
     public int GoldOnDeath = 10;
     public int healthDecrease = 1;
+
     public bool Slowed = false;
 
     [Header("Unity Stuff")]
@@ -22,20 +24,28 @@ public class Enemy : MonoBehaviour
     private Transform Target;
 
     private int Waypointindex = 0;
+
     private float SpeedT = 10f;
     private float FullHealth;
 
     private GameManagerSc _GameManagerSc;
+
     private GameObject GameManagerGameObject;
+    public GameObject SlowedGO;
+
     public Animator animator;
+
     public Image HealthBar;
     public Image DeathHealthbar;
+
     private Rigidbody2D rig;
+
     public bool FirstAndLastDeath = false;
 
 
     private void Start()
     {
+        SlowedGO.active = false;
         FullHealth = Health;
         SpeedT = speed;
         Target = WaypointsSystem.Waypoints[0];
@@ -69,7 +79,8 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Dead", true);
             rig.simulated = false;
             //HealthBar.fillAmount = 0f;
-            Destroy(DeathHealthbar);  
+            Destroy(DeathHealthbar); 
+            Destroy(SlowedGO);
             if (FirstAndLastDeath == false)
             {
                 _GameManagerSc.Money = _GameManagerSc.Money + GoldOnDeath;

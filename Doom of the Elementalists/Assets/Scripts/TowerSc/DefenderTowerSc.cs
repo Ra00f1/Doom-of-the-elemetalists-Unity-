@@ -42,10 +42,12 @@ public class DefenderTowerSc : MonoBehaviour
             if (dis < range && EnemySc.Slowed == false)
             {
                 EnemySc.Slowed = true;
+                EnemySc.SlowedGO.active = true;
             }
             if (dis > range)
             {
                 EnemySc.Slowed = false;
+                EnemySc.SlowedGO.active = false;
             }
         }
     }

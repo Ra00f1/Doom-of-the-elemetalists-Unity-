@@ -348,6 +348,8 @@ public class SellAndUpgradeScript : MonoBehaviour
                 TowerSc.PhysicalDamage = PhysicalDamage;
                 TowerSc.MagicalDamage = MagicalDamage;
 
+                //TowerSc.TowerRangeGO.transform.localScale.x = 250f;
+
                 GameManagerScript.Money -= UpgradeCost;
 
                 UpgradeCost = TowerSc.ATowerUpgradeCost2;
