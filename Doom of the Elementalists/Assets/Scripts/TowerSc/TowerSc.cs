@@ -44,6 +44,8 @@ public class TowerSc : MonoBehaviour
     {
         InvokeRepeating("UpdateTarget", 0f, 0.3f);
         TowerRangeSpriteRenderer = TowerRangeGO.GetComponent<SpriteRenderer>();
+
+        TowerRangeGO.active = false;
     }
 
     private void UpdateTarget()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerUIScriptClose : MonoBehaviour
 {
+    public TowerSc towerSc;
     public TowerUIScript TowerUISc;
 
     public CircleCollider2D CircleCollider;
@@ -15,7 +16,7 @@ public class TowerUIScriptClose : MonoBehaviour
 
     private void Start()
     {
-
+        towerSc = TowerUISc.gameObject.GetComponent<TowerSc>();
     }
     [System.Obsolete]
     private void Update()
@@ -26,6 +27,7 @@ public class TowerUIScriptClose : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
+                    towerSc.TowerRangeGO.active = false;
                     TowerUISc.TowerUI.active = false;
                     BuildMenuOpen = false;
                     TowerUISc.IsOpenNow = false;

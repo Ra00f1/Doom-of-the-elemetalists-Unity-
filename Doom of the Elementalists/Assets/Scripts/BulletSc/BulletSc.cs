@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -58,21 +58,15 @@ public class BulletSc : MonoBehaviour
         float ExplosionRadius = 100f;
         Vector3 center = gameObject.transform.position;
         Collider2D[] HitColliders = Physics2D.OverlapCircleAll(center, ExplosionRadius);
-        for (int i = 0; i <= HitColliders.Length; i++)
+        for (int i = 0; i < HitColliders.Length; i++)
         {
-            Enemy enemySc = HitColliders[i].gameObject.GetComponent<Enemy>();
-            enemySc.Getdamaged(damage, physicalDamage, magicalDamage);
-            AudioSource.PlayClipAtPoint(AudioClip, TowerPosition, 1f);
-            Destroy(gameObject);
-
-            /*
-            if (enemySc.Health > 0)
+            if (HitColliders[i].tag == "Attackers")
             {
+                Enemy enemySc = HitColliders[i].gameObject.GetComponent<Enemy>();
                 enemySc.Getdamaged(damage, physicalDamage, magicalDamage);
                 AudioSource.PlayClipAtPoint(AudioClip, TowerPosition, 1f);
                 Destroy(gameObject);
             }
-            */
         }
     }
 }

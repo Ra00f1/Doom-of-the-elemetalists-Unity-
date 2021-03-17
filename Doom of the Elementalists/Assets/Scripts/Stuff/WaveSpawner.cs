@@ -5,6 +5,8 @@ public class WaveSpawner : MonoBehaviour {
 
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
+	public GameObject[] DeadEnemies;
+
 	[System.Serializable]
 	public class Wave
 	{
@@ -42,7 +44,7 @@ public class WaveSpawner : MonoBehaviour {
 	{
 		if (spawnPoints.Length == 0)
 		{
-			//Debug.LogError("No spawn points referenced.");
+
 		}
 
 		waveCountdown = timeBetweenWaves;
@@ -77,19 +79,21 @@ public class WaveSpawner : MonoBehaviour {
 
 	void WaveCompleted()
 	{
-		//Debug.Log("Wave Completed!");
-
 		state = SpawnState.COUNTING;
 		waveCountdown = timeBetweenWaves;
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
 			nextWave = 0;
-			//Debug.Log("ALL WAVES COMPLETE! Looping...");
 		}
 		else
 		{
 			nextWave++;
+		}
+		DeadEnemies = GameObject.FindGameObjectsWithTag("Dead Enemy");
+		foreach (GameObject enemy in DeadEnemies)
+		{
+			Destroy(enemy);
 		}
 	}
 

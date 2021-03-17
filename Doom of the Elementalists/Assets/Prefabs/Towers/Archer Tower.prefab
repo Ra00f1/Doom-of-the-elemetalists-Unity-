@@ -137,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 3228797162881807826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 21, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalScale: {x: 300, y: 300, z: 1}
   m_Children: []
   m_Father: {fileID: 5430881059571232253}
   m_RootOrder: 6
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5d4575a6be074504ab9716287fa63248, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0.59607846}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -421,6 +421,7 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 5889845349262732966, guid: b21bf5dc9af61384caf0c0bc0f8b8f76,
     type: 3}
   RotatablePart: {fileID: 1024283139892573487}
+  TowerRangeGO: {fileID: 3228797162881807826}
   enemyTag: Attackers
 --- !u!114 &4217119832210791826
 MonoBehaviour:
@@ -804,6 +805,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5632311839682158987, guid: f179da6d2ffe8f44489efed506054208,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632311839682158987, guid: f179da6d2ffe8f44489efed506054208,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632311839682158987, guid: f179da6d2ffe8f44489efed506054208,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632311839682158987, guid: f179da6d2ffe8f44489efed506054208,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6979281859390343976, guid: f179da6d2ffe8f44489efed506054208,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -812,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 7624063371845952850, guid: f179da6d2ffe8f44489efed506054208,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f179da6d2ffe8f44489efed506054208, type: 3}

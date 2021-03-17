@@ -42,6 +42,7 @@ public class SellAndUpgradeScript : MonoBehaviour
         GamemnanegerObject = GameObject.Find("GameManagerObject");
         GameManagerScript = GamemnanegerObject.GetComponent < GameManagerSc> ();
 
+
         UpgradePic1.enabled = false;
         UpgradePic2.enabled = false;
         UpgradePic3.enabled = false;
@@ -154,6 +155,8 @@ public class SellAndUpgradeScript : MonoBehaviour
                 TowerSc.PhysicalDamage = PhysicalDamage;
                 TowerSc.MagicalDamage = MagicalDamage;
 
+                TowerSc.TowerRangeGO.transform.localScale = new Vector3 (TowerRange, TowerRange, 0);
+
                 GameManagerScript.Money -= UpgradeCost;
 
                 UpgradePic3.enabled = true;
@@ -250,6 +253,8 @@ public class SellAndUpgradeScript : MonoBehaviour
                 TowerSc.FireRate = TowerFireRate;
                 TowerSc.PhysicalDamage = PhysicalDamage;
                 TowerSc.MagicalDamage = MagicalDamage;
+
+                TowerSc.TowerRangeGO.transform.localScale = new Vector3 (TowerRange, TowerRange ,0);
 
                 GameManagerScript.Money -= UpgradeCost;
 
@@ -348,7 +353,7 @@ public class SellAndUpgradeScript : MonoBehaviour
                 TowerSc.PhysicalDamage = PhysicalDamage;
                 TowerSc.MagicalDamage = MagicalDamage;
 
-                //TowerSc.TowerRangeGO.transform.localScale.x = 250f;
+                TowerSc.TowerRangeGO.transform.localScale = new Vector3 (TowerRange, TowerRange ,0);
 
                 GameManagerScript.Money -= UpgradeCost;
 
